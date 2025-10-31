@@ -27,25 +27,5 @@ def main():
     else:
         st.info("아래 입력창에 궁금한 점을 적어주세요.")
 
-    float_init()
-
-    if "show_chatbot" not in st.session_state:
-        st.session_state["show_chatbot"] = False
-
-    with st.container():
-        if float_parent(css="position: fixed; bottom: 3%; right: 2%; z-index:1000;"):
-            if st.button("💬 챗봇 열기/닫기"):
-                st.session_state["show_chatbot"] = not st.session_state["show_chatbot"]
-
-    if st.session_state["show_chatbot"]:
-        with st.container():
-            st.markdown("""
-                <div style="position: fixed; bottom: 10%; right: 2%; width: 340px; 
-                            background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-                            border: 2px solid #725bdb; z-index: 1100; padding:14px;">
-                <h4 style="color: #725bdb;">챗봇 박스 테스트</h4>
-                </div>
-                """, unsafe_allow_html=True)
-
 if __name__ == '__main__':
     main()
