@@ -1,7 +1,7 @@
 import streamlit as st
 from google import genai
 from google.genai import types  # 시스템 프롬프트 선언용
-from streamlit_float import float_init, float_parent
+
 
 def main():
     st.title('채팅 앱')
