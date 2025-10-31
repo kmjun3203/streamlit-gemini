@@ -4,7 +4,7 @@ from google.genai import types  # 시스템 프롬프트 선언용
 
 
 def main():
-    st.title('채팅 앱')
+    st.title('챗봇')
 
     client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
     system_prompt = "수산물에 관해서 모든것을 아는 챗봇이야. 너한테 물어보는 사람들은 수산물 도매상이나 수산물 관련 업체들이야."
@@ -26,6 +26,11 @@ def main():
         st.chat_message("assistant").write(response.text)
     else:
         st.info("아래 입력창에 궁금한 점을 적어주세요.")
+        st.markdown("""
+        - 예시 질문:
+            - 수산물 도매시장 위치 안내
+            - 수산물 생산량 변화의 주요 원인
+        """)
 
 if __name__ == '__main__':
     main()
